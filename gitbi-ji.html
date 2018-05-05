@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>Git笔记</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">一派胡言 </a></h1>
+                <nav><ul>
+                    <li><a href="/category/docker.html">Docker</a></li>
+                    <li class="active"><a href="/category/git.html">Git</a></li>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/gitbi-ji.html" rel="bookmark"
+           title="Permalink to Git笔记">Git笔记</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-05-05T00:00:00+08:00">
+                Published: 六 05 五月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/sidewalk.html">sidewalk</a>
+        </address>
+<p>In <a href="/category/git.html">Git</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>TODO</h2>
+<ul>
+<li>删除commit</li>
+<li>合并commit</li>
+<li>reset</li>
+<li>revert</li>
+<li>rebase</li>
+</ul>
+<h2>用户配置</h2>
+<ul>
+<li>git config --global user.name 'sidewalk'</li>
+<li>git config --global user.email '491187637@qq.com'</li>
+<li>在某个项目中配置不同用户信息则去掉global</li>
+<li>配置编辑器：git config core.editor vim</li>
+</ul>
+<h2>名词</h2>
+<ul>
+<li>HEAD：指向当前版本</li>
+<li>reflog：命令历史</li>
+<li>checkout：版本库替换工作区</li>
+<li>reset：回退版本/把暂存区的修改回退到工作区</li>
+<li>revert：反向提交</li>
+</ul>
+<h2>命令</h2>
+<ul>
+<li>
+<p>新建并切换分支：</p>
+<ul>
+<li>git checkout -b feature/abc</li>
+<li>git checkout -b bugfix/abc</li>
+</ul>
+</li>
+<li>
+<p>新建远程分支：</p>
+<ul>
+<li>git branch feature/abc</li>
+<li>git push -u origin feature/abc</li>
+</ul>
+</li>
+<li>
+<p>删除分支：</p>
+<ul>
+<li>本地：git branch -d feature/abc（-D为强制删除）</li>
+<li>远程：git push origin :feature/abc</li>
+</ul>
+</li>
+<li>
+<p>删除文件：</p>
+<ul>
+<li>git rm a.txt</li>
+<li>git commit</li>
+</ul>
+</li>
+<li>
+<p>与远程仓库建立关联：</p>
+<ul>
+<li>git remote add origin git@github.com:michaelliao/learngit.git</li>
+<li>git push -u origin master：推送至远程master，并把本地、远程master分支进行关联</li>
+<li>git push origin master：之后推送</li>
+</ul>
+</li>
+<li>
+<p>合并：</p>
+<ul>
+<li>git merge dev：把dev分支合并到当前分支</li>
+<li>git merge --no-ff -m 'merge dev' dev：合并dev分支，不使用fast-forward模式</li>
+</ul>
+</li>
+<li>
+<p>暂存</p>
+<ul>
+<li>git stash：暂存当前工作区</li>
+<li>git stash list：查看暂存情况</li>
+<li>git stash pop：恢复暂存</li>
+</ul>
+</li>
+<li>
+<p>远程库</p>
+<ul>
+<li>git remote -v</li>
+<li>git checkout -b dev origin/dev：创建远程分支到本地</li>
+<li>git branch --set-upstream dev origin/dev：建立dev和origin/dev链接</li>
+</ul>
+</li>
+<li>
+<p>推送（<strong>分支</strong>）</p>
+<ul>
+<li>git push origin master（指定本地分支）</li>
+</ul>
+</li>
+<li>
+<p>拉取</p>
+<ul>
+<li>git pull --rebase：变基，不会产生一个merge commit</li>
+</ul>
+</li>
+<li>
+<p>revert</p>
+<ul>
+<li>git revert HEAD：撤销前一次commit，并产生一个新的commit</li>
+</ul>
+</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

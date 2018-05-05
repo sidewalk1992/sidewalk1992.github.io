@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>Docker笔记</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">一派胡言 </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/docker.html">Docker</a></li>
+                    <li><a href="/category/git.html">Git</a></li>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/dockerbi-ji.html" rel="bookmark"
+           title="Permalink to Docker笔记">Docker笔记</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-05-05T00:00:00+08:00">
+                Published: 六 05 五月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/sidewalk.html">sidewalk</a>
+        </address>
+<p>In <a href="/category/docker.html">Docker</a>.</p>
+
+</footer><!-- /.post-info -->      <h1>基本概念</h1>
+<p>docker包括三个基本概念
+<em> 镜像（<code>Image</code>）
+</em> 容器（<code>Container</code>）
+* 仓库（<code>Repository</code>）</p>
+<h1>命令</h1>
+<ul>
+<li>brew cask install docker：mac安装docker</li>
+<li>docker --version：查看docker版本</li>
+<li>docker info</li>
+<li>docker start dmp：启动容器</li>
+<li>docker stop dmp：停止容器</li>
+<li>docker restart dmp：重启容器</li>
+<li>docker rm dmp：删除容器（必须先停止）</li>
+<li>docker rmi ubuntu：删除镜像</li>
+<li>docker logs -f dmp：查看容器内部标准输出</li>
+<li>docker ps：查看当前运行容器</li>
+<li>docker ps -a：显示所有容器</li>
+<li>docker top redis：查看容器内部运行的进程</li>
+<li>docker inspect redis：查看容器的配置和状态信息</li>
+<li>docker exec -it dmp bash：进入容器</li>
+<li>docker run -d --name redis -p 6379:6379 redis：启动redis</li>
+</ul>
+<h1>Dockerfile</h1>
+<ul>
+<li>基础镜像
+FROM</li>
+<li>维护者信息</li>
+<li>镜像操作指令
+RUN：执行命令行命令</li>
+<li>容器启动时执行指令</li>
+<li>.dockerignore</li>
+<li>样例：</li>
+</ul>
+<div class="highlight"><pre><span></span>FROM debian:jessie
+
+RUN buildDeps=&#39;gcc libc6-dev make&#39; \
+    &amp;&amp; apt-get update \
+    &amp;&amp; apt-get install -y $buildDeps \
+    &amp;&amp; wget -O redis.tar.gz &quot;http://download.redis.io/releases/redis-3.2.5.tar.gz&quot; \
+    &amp;&amp; mkdir -p /usr/src/redis \
+    &amp;&amp; tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1 \
+    &amp;&amp; make -C /usr/src/redis \
+    &amp;&amp; make -C /usr/src/redis install \
+    &amp;&amp; rm -rf /var/lib/apt/lists/* \
+    &amp;&amp; rm redis.tar.gz \
+    &amp;&amp; rm -r /usr/src/redis \
+    &amp;&amp; apt-get purge -y --auto-remove $buildDeps
+</pre></div>
+
+
+<h1>三剑客</h1>
+<ul>
+<li>docker-machine</li>
+<li>docker-compose：编排工具，处理多个容器在一台主机上的启动和依赖</li>
+<li>docker-swarm：集群管理工具，通过它可以把多个docker虚拟成一个集群</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>一派胡言 - sidewalk</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">一派胡言 </a></h1>
+                <nav><ul>
+                    <li><a href="/category/docker.html">Docker</a></li>
+                    <li><a href="/category/git.html">Git</a></li>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/about-me.html">About Me</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-05-05T00:00:00+08:00">
+                Published: 六 05 五月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/sidewalk.html">sidewalk</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info --><p>sidewalk的一派胡言罢了。</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/dockerbi-ji.html" rel="bookmark"
+                           title="Permalink to Docker笔记">Docker笔记</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-05-05T00:00:00+08:00">
+                Published: 六 05 五月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/sidewalk.html">sidewalk</a>
+        </address>
+<p>In <a href="/category/docker.html">Docker</a>.</p>
+
+</footer><!-- /.post-info -->                <h1>基本概念</h1>
+<p>docker包括三个基本概念
+<em> 镜像（<code>Image</code>）
+</em> 容器（<code>Container</code>）
+* 仓库（<code>Repository</code>）</p>
+<h1>命令</h1>
+<ul>
+<li>brew cask install docker：mac安装docker</li>
+<li>docker --version：查看docker版本</li>
+<li>docker info</li>
+<li>docker start dmp：启动容器</li>
+<li>docker stop dmp：停止容器</li>
+<li>docker restart dmp：重启容器</li>
+<li>docker rm dmp：删除容器（必须先停止）</li>
+<li>docker rmi ubuntu：删除镜像</li>
+<li>docker logs -f dmp：查看容器内部标准输出</li>
+<li>docker ps：查看当前运行容器</li>
+<li>docker ps …</li></ul>
+                <a class="readmore" href="/dockerbi-ji.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/gitbi-ji.html" rel="bookmark"
+                           title="Permalink to Git笔记">Git笔记</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-05-05T00:00:00+08:00">
+                Published: 六 05 五月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/sidewalk.html">sidewalk</a>
+        </address>
+<p>In <a href="/category/git.html">Git</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>TODO</h2>
+<ul>
+<li>删除commit</li>
+<li>合并commit</li>
+<li>reset</li>
+<li>revert</li>
+<li>rebase</li>
+</ul>
+<h2>用户配置</h2>
+<ul>
+<li>git config --global user.name 'sidewalk'</li>
+<li>git config --global user.email '491187637@qq.com'</li>
+<li>在某个项目中配置不同用户信息则去掉global</li>
+<li>配置编辑器：git config core.editor vim</li>
+</ul>
+<h2>名词</h2>
+<ul>
+<li>HEAD：指向当前版本</li>
+<li>reflog：命令历史</li>
+<li>checkout：版本库替换工作区</li>
+<li>reset：回退版本/把暂存区的修改回退到工作区</li>
+<li>revert：反向提交</li>
+</ul>
+<h2>命令</h2>
+<ul>
+<li>
+<p>新建并切换分支：</p>
+<ul>
+<li>git checkout -b feature/abc</li>
+<li>git checkout -b …</li></ul></li></ul>
+                <a class="readmore" href="/gitbi-ji.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
